@@ -16,6 +16,7 @@ const config = {
       screens: {
         "2xl": "1400px",
       },
+     
     },
     extend: {
       colors: {
@@ -24,6 +25,16 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        text: {
+          base: '#05073C', // Màu text mặc định
+          primary: '#EB662B', // Màu text chính
+          secondary: '#fff', // Màu text phụ
+        }
+        ,
+        borders: {
+          base: '#E7E6E6',
+          primary: '#EB662B'
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -67,11 +78,23 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+         gradient: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "gradient": "gradient 15s ease infinite",
       },
+      height: {
+        'banner': 'calc(100vh - 4rem)',
+      },
+       maxHeight: {
+        'calc-screen-minus-menu': 'calc(100vh - 4rem)' // Thay 4rem bằng chiều cao menu của bạn
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
